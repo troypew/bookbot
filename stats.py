@@ -49,37 +49,38 @@ def character_count_calc(filepath):
                 character_count[letter] = 1
         return character_count
 
-#sorted_characters = []
+new_character_count = character_count_calc(filepath)
 
-def sorted_chars(character_count):   
+sorted_characters = []
+#test_dict = character_count
+
+def sort_on(sorted_characters):
+         return sorted_characters["num"]
+
+def sorted_chars(new_character_count):   
     sorted_characters = [] 
-    for char in character_count:
+    #test_dict = character_count
+    
+    for char, num in character_count.items():
+        num = character_count[char]
         if char.isalpha():
-            sorted_characters = [{"char": char, "num": char[0]}]
+            sorted_characters.append({"char" : char, "num" : character_count[char]})
         else:
             pass
-    return sorted_characters.sort(reverse=True, char=sort_on)
+    sorted_characters.sort(reverse=True, key=sort_on)
+    return sorted_characters
 
-    
+reformatted_character_count = sorted_chars(new_character_count)
 
+# def sort_on():
+#         return reformatted_character_count["num"]
 
-
-
-
+#new_sorted_chars = reformatted_character_count.sort(reverse=True, key=sort_on)
 
 def main(): 
     #print(f"Found {total_word_count(filepath)} total words")
     #print(character_count_calc(filepath))
-    print(sorted_chars(character_count))
+    #print(sorted_chars(new_character_count))
+    return (sorted_chars(new_character_count))
 
 main()
-
-
-
-
-
-#def sort_on(character_count):
-#    return character_count[0]
-#
-#character_count.sort(key=sort_on)
-#print(character_count)
