@@ -45,10 +45,22 @@ def character_count_calc(filepath):
             letter = letters.lower()
             if letter in character_count:
                 character_count[letter] += 1
-                #print(character_count[letter])
             else:
                 character_count[letter] = 1
-            return character_count
+        return character_count
+
+#sorted_characters = []
+
+def sorted_chars(character_count):   
+    sorted_characters = [] 
+    for char in character_count:
+        if char.isalpha():
+            sorted_characters = [{"char": char, "num": char[0]}]
+        else:
+            pass
+    return sorted_characters.sort(reverse=True, char=sort_on)
+
+    
 
 
 
@@ -56,8 +68,18 @@ def character_count_calc(filepath):
 
 
 def main(): 
-    print(f"Found {total_word_count(filepath)} total words")
-    print(character_count_calc(filepath))
-
+    #print(f"Found {total_word_count(filepath)} total words")
+    #print(character_count_calc(filepath))
+    print(sorted_chars(character_count))
 
 main()
+
+
+
+
+
+#def sort_on(character_count):
+#    return character_count[0]
+#
+#character_count.sort(key=sort_on)
+#print(character_count)
