@@ -81,6 +81,6 @@ def main():
     #print(f"Found {total_word_count(filepath)} total words")
     #print(character_count_calc(filepath))
     #print(sorted_chars(new_character_count))
-    return (sorted_chars(new_character_count))
+    print(sorted_chars(new_character_count))
 
 main()
