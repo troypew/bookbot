@@ -1,8 +1,8 @@
 filepath = "books/frankenstein.txt"
 from stats import total_word_count
-from stats import character_count_calc
 from stats import sorted_chars
 from stats import reformatted_character_count
+from stats import new_character_count
 
 # def get_book_text(filepath):
 #     try:
@@ -12,22 +12,20 @@ from stats import reformatted_character_count
 #     except Exception as e:
 #         print(e)
 
-
+reformatted_character_count = sorted_chars(new_character_count)
 
 
 def main(): 
-    #print(get_book_text(filepath))
-    #print(f"Found {total_word_count(filepath)} total words")
-    print(
-        "============ BOOKBOT ============"
-        "Analyzing book found at books/frankenstein.txt..."
-        "----------- Word Count ----------"
-        )
-    print(f"Found {character_count_calc} total words")
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
+    print(f"Found {total_word_count(filepath)} total words")
     print("--------- Character Count -------")
     for entry in reformatted_character_count:
-        print(entry[0],": ",entry[1])
+        character = entry["char"]
+        if character.isalpha():
+            print(f"{character}: {entry['num']}")
+    print("============= END ===============")
 
 
 main()
-

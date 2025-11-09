@@ -52,14 +52,12 @@ def character_count_calc(filepath):
 new_character_count = character_count_calc(filepath)
 
 sorted_characters = []
-#test_dict = character_count
 
 def sort_on(sorted_characters):
          return sorted_characters["num"]
 
 def sorted_chars(new_character_count):   
     sorted_characters = [] 
-    #test_dict = character_count
     
     for char, num in character_count.items():
         num = character_count[char]
