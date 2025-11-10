@@ -1,23 +1,20 @@
-filepath = "books/frankenstein.txt"
+import sys
 from stats import total_word_count
 from stats import sorted_chars
 from stats import reformatted_character_count
 from stats import new_character_count
 
-# def get_book_text(filepath):
-#     try:
-#         with open(filepath) as f:
-#             filecontents = f.read()
-#         return filecontents
-#     except Exception as e:
-#         print(e)
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+filepath = sys.argv[1]
 
 reformatted_character_count = sorted_chars(new_character_count)
 
-
-def main(): 
+def main():
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {sys.argv[1]}...")
     print("----------- Word Count ----------")
     print(f"Found {total_word_count(filepath)} total words")
     print("--------- Character Count -------")

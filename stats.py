@@ -1,4 +1,11 @@
-filepath = "books/frankenstein.txt"
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+filepath = sys.argv[1]
+
 
 character_count = {
     'a' : 0,
@@ -79,6 +86,6 @@ def main():
     #print(f"Found {total_word_count(filepath)} total words")
     #print(character_count_calc(filepath))
     #print(sorted_chars(new_character_count))
-    print(sorted_chars(new_character_count))
+    return (sorted_chars(new_character_count))
 
 main()
