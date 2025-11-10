@@ -6,7 +6,6 @@ if len(sys.argv) != 2:
 
 filepath = sys.argv[1]
 
-
 character_count = {
     'a' : 0,
     'b' : 0,
@@ -36,7 +35,6 @@ character_count = {
     'z' : 0,
 }
 
-
 def total_word_count(filepath):
     with open(filepath) as f:
         filecontents = f.read()
@@ -58,8 +56,6 @@ def character_count_calc(filepath):
 
 new_character_count = character_count_calc(filepath)
 
-sorted_characters = []
-
 def sort_on(sorted_characters):
          return sorted_characters["num"]
 
@@ -77,15 +73,7 @@ def sorted_chars(new_character_count):
 
 reformatted_character_count = sorted_chars(new_character_count)
 
-# def sort_on():
-#         return reformatted_character_count["num"]
-
-#new_sorted_chars = reformatted_character_count.sort(reverse=True, key=sort_on)
-
 def main(): 
-    #print(f"Found {total_word_count(filepath)} total words")
-    #print(character_count_calc(filepath))
-    #print(sorted_chars(new_character_count))
     return (sorted_chars(new_character_count))
 
 main()
